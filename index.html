@@ -1,12 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<html lang="en" class="vh-100">
   <title> </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
-  <body class="h-100">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <style>
+    .h-80 { height: 80% }
+    #rsvp {
+        background: url(./images/scrambler-mobile.jpg) no-repeat center center;
+        background-size: cover;
+    }
+    #registry {
+        background: url(./images/go-fish-mobile.jpg) no-repeat -90px center;
+        background-size: cover;
+    }
+    @media screen and (min-width: 30em) {
+      #rsvp {
+        background: url(./images/scrambler.jpg) no-repeat center center;
+        background-size: cover;
+      }
+      #registry {
+          background: url(./images/go-fish.jpg) no-repeat center center;
+          background-size: cover;
+      }
+    }
+  </style>
+  <body>
     <main class="flex flex-column h-100 w-100">
-      <section style="background: url(./images/background.jpg) no-repeat center center; background-size: cover;" class="flex flex-column h-100 w-100">
-        <header class="h-100 ph4 pb4 flex flex-column items-center justify-end ttu white sans-serif tc">
+      <header class="fixed w-100">
+        <nav class="dt w-100 border-box pa3 ph5-ns bg-white-90 avenir ttu">
+          <div class="dtc v-mid w-75 tr">
+            <a class="link underline-hover dark-gray f6 f5-ns dib mr3 mr4-ns" href="#home" title="Home">Home</a>
+            <a class="link underline-hover dark-gray f6 f5-ns dib mr3 mr4-ns" href="#location" title="Location">Location</a>
+            <a class="link underline-hover dark-gray f6 f5-ns dib mr3 mr4-ns" href="#rsvp" title="RSVP">RSVP</a>
+            <a class="link underline-hover dark-gray f6 f5-ns dib" href="#registry" title="Registry">Registry</a>
+          </div>
+        </nav>
+      </header>
+      <section id="home" style="background: url(./images/background.jpg) no-repeat center center; background-size: cover;" class="flex flex-column vh-100 w-100">
+        <header class="h-100 ph4 pb4 flex flex-column items-center justify-end ttu white avenir tc">
           <h1 class="f2-m f1-l fw7 mv1">
             Save the date!
           </h1>
@@ -16,6 +48,72 @@
           </p>
         </header>
       </section>
+
+      <section id="location" class="flex flex-row flex-wrap justify-around vh-100-l w-100 ph3">
+        <article class="flex flex-column mt5 mt5-m mt3-ns w-33-l justify-center items-center">
+          <div class="f3 fw4">Scarritt Bennett</div>
+          <div class="f3 fw4 mb3">Wightman Chapel</div>
+          <address class='center mb2 f4'>
+            <p class="ma0">
+              1008 19th Ave. South
+            </p>
+            <p class="ma0">
+              Nashville, TN 37212
+            </p>
+          </address>
+          <img src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAC5mVaea2lqwTyCNSF1GeXx3ldMVf24xU&autoscale=2&size=1800x900&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0080%7Clabel:1%7CScarrit+Bennet"/>
+          <p>Parking available on premises<p>
+        </article>
+        <article class="flex flex-column w-33-l w-80-m justify-center items-center">
+          <h3 class="f3 fw4">Ruby</h3>
+          <address class='center mb2 f4'>
+            <p class="ma0">
+              2411 Blakemore Ave.
+            </p>
+            <p class="ma0">
+              Nashville, TN 37212
+            </p>
+          </address>
+          <img src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAC5mVaea2lqwTyCNSF1GeXx3ldMVf24xU&autoscale=2&size=1800x900&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0080%7Clabel:2%7CRuby+Nashville"/>
+          <p>Parking available next door at Harris-Hillman School<p>
+        </article>
+      </section>
+
+      <section id="rsvp" class="flex flex-column-ns flex-row justify-center items-end-ns mt0-ns mt5 vh-100 w-100">
+        <article class="flex justify-center-ns tems-center-ns items-start ph3 w-50-ns w-100 mr3-ns mt0-ns mt5">
+          <div class="bg-white-90 w-80-ns ph3 br3 avenir">
+            <h3 class="fw5 f1-l f2-m ttu">We'd love to have you</h3>
+            <h4 class="fw5 f4">
+              RSVP <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKumKhqu7HUNai-ht0BFgmdAK12gILwa8ro8-uh4e_dTFmMw/viewform?usp=sf_link">here</a> by September 14th
+            </h4>
+            <p class="lh-copy">
+              This is a family-friendly wedding. We are not only happy for you to bring your kids but also encourage you to do so. Our only request is that you get them out on the dance floor to do the <a href="https://www.youtube.com/watch?v=HPJM6ww5hNU">floss</a>.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section id="registry" class="flex flex-column-ns flex-row justify-center-ns items-end vh-100 w-100 ph5-ns pb0-ns ph3 pb6">
+        <article class="w-33-ns w-100 bg-white-50 pa3 br2 avenir">
+          <h3 class="fw6 f1-l f2-m ttu">Registries</h3>
+
+          <p class="lh-copy">
+            We're registered at <a href="https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=545786498&eventType=Wedding&pwsurl=">Bed Bath &amp; Beyond</a> and <a href="https://www.amazon.com/wedding/levi-kennedy-joanna-bradley-nashville-october-2018/registry/1XLYN4YQK8247">Amazon</a>.
+          </p>
+        </article>
+      </section>
     </main>
+
+    <script>
+      $(function(){
+        $('nav a').on('click', function(){
+          var $target = $($(this).attr('href'));
+          if(Boolean($target.length)) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: $target.offset().top}, 500);
+          }
+        });
+      })
+    </script>
   </body>
 </html
